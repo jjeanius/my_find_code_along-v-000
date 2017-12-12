@@ -3,8 +3,10 @@ require 'pry'
 def my_find(collection)
   i = 0
   while i < collection.length
-    yield(collection[i])
-    binding.pry
+    if yield(collection[i])
+      return collection[1]
+      binding.pry
+    end
       i = i =1
   end
 end
